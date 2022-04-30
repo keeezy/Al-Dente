@@ -33,3 +33,9 @@ var recipes = {
 document.querySelector("#button-search").addEventListener("click", function () {
   recipes.search();
 });
+
+
+ //displayResults: function() {
+     
+
+ //}
