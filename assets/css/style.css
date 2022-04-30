@@ -117,3 +117,10 @@ input {
   border: 0;
   margin: 40px auto;
 }
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
