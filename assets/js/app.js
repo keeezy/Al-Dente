@@ -1,31 +1,35 @@
 
 
 //functions to get data from the api 
-let recipes = {
-    fetchRecipes: function(recipe) {
+var recipes = {
+    fetchRecipes: function(recipe){
+        console.log(recipe)
     fetch(
-      "https://api.edamam.com/api/recipes/v2?q=" +
+      "https://api.edamam.com/api/recipes/v2?type=public&q=" +
         recipe +
-        "&app_id=2f4e2d93&app_key=383ad0ac5839254aad627d80d6afdaeb&mealType=Dinner"
+        "&app_id=69cf7082&app_key=844db0530aecb5987dfe95007e77dfa9"
     ).then((response) => {
       if (!response.ok) {
         throw new Error("No recipe found");
       }
       return response.json();
-    });
+    }) .then((data) => {
+        console.log(data)
+
+    })
     console.log(recipe)
+    
 
 },
 
 //search button function
   search: function () {
-    this.fetchRecipes(document.querySelector(".search").value);
+    this.fetchRecipes(document.querySelector(".search-bar").value);
   }, 
     
 };
 
-
 //Event listener for search button
-document.querySelector(".search button").addEventListener("click", function () {
+document.querySelector("#button-search").addEventListener("click", function () {
   recipes.search();
 });
