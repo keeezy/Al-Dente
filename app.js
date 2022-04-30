@@ -1,6 +1,6 @@
 
 
-
+//functions to get data from the api 
 let recipes = {
 apiKey: "383ad0ac5839254aad627d80d6afdaeb",
 apiId: "2f4e2d93",
@@ -14,7 +14,7 @@ fetchRecipes: function(recipe) {
         this.apiKey
     )
 },
-
+//search button function
   search: function () {
     this.fetchRecipes(document.querySelector(".search").value);
   }, 
@@ -22,7 +22,7 @@ fetchRecipes: function(recipe) {
 };
 
 
-
+//Event listener for search button
 document.querySelector(".search button").addEventListener("click", function () {
   recipes.search();
 });
