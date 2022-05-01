@@ -31,6 +31,7 @@ var recipes = {
 
     for (i = 0; i < 5; i++) {
       const { label} = data[i].recipe;
+      const {ingredients} = data[i].recipe.ingredientsLines[0];
       let containerRecipeEl = document.createElement("div");
       console.log([i]);
       let fotoEl = document.createElement("img");
@@ -39,12 +40,14 @@ var recipes = {
       nameEl.textContent = "Recipe: " + label;
       let cuisineTypeEl = document.createElement("div");
       cuisineTypeEl.textContent = "Cusine : " + data[i].recipe.cuisineType[0];
+      let ingredientsEl = document.createElement("ul")
+      ingredientsEl.textContent = 
       let getUrlEl = document.createElement("a")
       getUrlEl.href = data[i].recipe.url;
        console.log(data[i].recipe.url)
-       
-      containerRecipeEl.append(fotoEl, nameEl, cuisineTypeEl);
-      displayResults.append(containerRecipeEl, getUrlEl);
+
+      containerRecipeEl.append(fotoEl, nameEl, cuisineTypeEl,getUrlEl);
+      displayResults.append(containerRecipeEl);
     }
   },
 };
