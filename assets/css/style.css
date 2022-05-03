@@ -135,7 +135,8 @@ button {
 .search-results {
   margin-top: 50px;
   width: 100%;
-  display: grid;
+  display: table-column;
+  text-decoration: none;
 }
 .recipes-result div {
   margin-top: 10px;
@@ -147,13 +148,16 @@ button {
   background: rgba(255, 165, 0, 0.73);
   opacity: 1;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.elements {
+
+a {
   background: rgba(255, 165, 0, 0.73);
   opacity: 1;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 
 }
 

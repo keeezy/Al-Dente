@@ -25,40 +25,64 @@ var recipes = {
 
   //It display results and create element to so
   displayResults: function (data) {
-    console.log(data)
+    console.log(data);
     let displayResults = document.querySelector(".recipes-result");
     displayResults.innerHTML = "";
 
     for (i = 0; i < 5; i++) {
-      const { label} = data[i].recipe;
-      const {ingredients} = data[i].recipe.ingredientsLines[0];
+      console.log(i)
+      const { label } = data[i].recipe;
+      const { ingredientLines } = data[i].recipe;
+      let listItemEl = this.ingredientsRecipe(ingredientLines)
       let containerRecipeEl = document.createElement("div");
-      console.log([i]);
       let fotoEl = document.createElement("img");
       fotoEl.src = data[i].recipe.images.SMALL.url;
       let nameEl = document.createElement("div");
       nameEl.textContent = "Recipe: " + label;
       let cuisineTypeEl = document.createElement("div");
       cuisineTypeEl.textContent = "Cusine : " + data[i].recipe.cuisineType[0];
-      let ingredientsEl = document.createElement("ul")
-      ingredientsEl.textContent = 
-      let getUrlEl = document.createElement("a")
+      let ingredientsEl = document.createElement("div");
+      ingredientsEl.innerHTML = listItemEl;
+      console.log(ingredientsEl)
+      let getUrlEl = document.createElement("a");
       getUrlEl.href = data[i].recipe.url;
-       console.log(data[i].recipe.url)
+      console.log(data[i].recipe.url);
 
-      containerRecipeEl.append(fotoEl, nameEl, cuisineTypeEl,getUrlEl);
-      displayResults.append(containerRecipeEl);
+      containerRecipeEl.append(
+        fotoEl,
+        nameEl,
+        cuisineTypeEl,
+        ingredientsEl
+      );
+      
+      getUrlEl.append(containerRecipeEl)
+      displayResults.append(getUrlEl);
     }
   },
+
+  ingredientsRecipe: function(recipes) {
+    let recetas = "<h4>List of Ingredients</h4>"
+    for (let i = 0; i < recipes.length; i++) {
+      recetas += `<p>${recipes[i]}</p>`
+
+    }
+    return recetas
+  }
 };
 
+
+//EVENTSSSSSS
 //Event listener for search button
 document.querySelector("#button-search").addEventListener("click", function () {
   recipes.search();
 });
-//Event to listen to enter or other keypress
-//document.querySelector(".search-bar").addEventListener("keypress", function () {
-  //recipes.search();
-//});
 
-//$(".search-bar").off('keyup').on('keyup')
+//Kisten to enter or other key events
+document
+  .querySelector(".search-bar")
+  .addEventListener("keyup", function (event) {
+    if (event.key == "Enter") {
+      recipes.search();
+    }
+  });
+
