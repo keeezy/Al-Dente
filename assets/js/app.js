@@ -5,7 +5,7 @@ var recipes = {
     fetch(
       "https://api.edamam.com/api/recipes/v2?type=public&q=" +
         recipe +
-        "&app_id=69cf7082&app_key=844db0530aecb5987dfe95007e77dfa9&imageSize=REGULAR"
+        "&app_id=69cf7082&app_key=844db0530aecb5987dfe95007e77dfa9&imageSize=REGULAR&random=true"
     )
       .then((response) => {
         if (!response.ok) {
@@ -26,40 +26,42 @@ var recipes = {
   //It display results and create element to so
   displayResults: function (data) {
     console.log(data);
-    let displayResults = document.querySelector(".recipes-result");
+    let displayResults = document.querySelector("#container");
     displayResults.innerHTML = "";
 
+
     for (i = 0; i < 5; i++) {
-      console.log(i)
+      let cusine = data[i].recipe.cuisineType[0];
+      let link = data[i].recipe.url;
       const { label } = data[i].recipe;
       const { ingredientLines } = data[i].recipe;
-      let listItemEl = this.ingredientsRecipe(ingredientLines)
+      let listItemEl = this.ingredientsRecipe(ingredientLines);
       let containerRecipeEl = document.createElement("div");
       let fotoEl = document.createElement("img");
       fotoEl.src = data[i].recipe.images.SMALL.url;
-      let nameEl = document.createElement("div");
+      let nameEl = document.createElement("h5");
       nameEl.textContent = "Recipe: " + label;
-      let cuisineTypeEl = document.createElement("div");
-      cuisineTypeEl.textContent = "Cusine : " + data[i].recipe.cuisineType[0];
-      let ingredientsEl = document.createElement("div");
+      let cuisineTypeEl = document.createElement("h5");
+      cuisineTypeEl.textContent = "Cusine : " + cusine;
+      let ingredientsEl = document.createElement("section");
       ingredientsEl.innerHTML = listItemEl;
-      console.log(ingredientsEl)
       let getUrlEl = document.createElement("a");
-      getUrlEl.href = data[i].recipe.url;
-      console.log(data[i].recipe.url);
-
+      getUrlEl.setAttribute("class", "col-4")
+      getUrlEl.href = link;
+     
       containerRecipeEl.append(
         fotoEl,
         nameEl,
         cuisineTypeEl,
         ingredientsEl
       );
-      
+
       getUrlEl.append(containerRecipeEl)
       displayResults.append(getUrlEl);
     }
   },
 
+//Function to loop on ingredient array
   ingredientsRecipe: function(recipes) {
     let recetas = "<h4>List of Ingredients</h4>"
     for (let i = 0; i < recipes.length; i++) {
