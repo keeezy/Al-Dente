@@ -86,7 +86,6 @@ nav ul li a {
 }
 
 main {
-  width: fit-content;
   position: absolute;
   top: 55%;
   left: 50%;
@@ -135,30 +134,55 @@ button {
 .search-results {
   margin-top: 50px;
   width: 100%;
+  display: table-column-group;
+  text-decoration: none;
+  flex-wrap: wrap;
+}
+
+.search-results div {
+  margin-top: 50px;
+  width: 100%;
   display: table-column;
   text-decoration: none;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.recipes-result div {
+#contianer:first-child{
+  margin-top:0px;
+}
+  #container h5 {
   margin-top: 10px;
   width: 100%;
   display: flex;
-  display: flex;
   justify-content: center;
+  align-items: center;
   color: black;
   background: rgba(255, 165, 0, 0.73);
   opacity: 1;
   cursor: pointer;
   text-decoration: none;
+  flex-wrap: wrap;
+}
+
+#container section {
+  color:black ;
+   background: rgba(255, 165, 0, 0.73);
+   padding: 8px;
+}
+
+#container img {
+  justify-content: center;
+  align-items: center;
+  margin-left: 200px;
+
 }
 
 
 a {
-  background: rgba(255, 165, 0, 0.73);
   opacity: 1;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-
 }
 
 .item {
@@ -173,4 +197,12 @@ a {
   width: 100%;
   height: 300px;
   border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.container-fluid {
+  padding: 8px;
+  margin: 12px;
 }
