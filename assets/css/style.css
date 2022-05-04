@@ -85,12 +85,12 @@ nav ul li a {
   text-decoration: none;
 }
 
-main {
+/* main {
   position: absolute;
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 h2 {
   font-family: "Katibeh";
