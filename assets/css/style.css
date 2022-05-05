@@ -206,3 +206,8 @@ a {
   padding: 8px;
   margin: 12px;
 }
+
+.container-fluid img {
+  height: 400px;
+  width: auto;
+}
