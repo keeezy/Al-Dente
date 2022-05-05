@@ -86,10 +86,9 @@ nav ul li a {
 }
 
 main {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  justify-content: flex-end;
+  margin-top: 450px;
+
 }
 
 h2 {
@@ -118,20 +117,21 @@ input {
 }
 
 .search {
-  display: flex;
   align-items: center;
   justify-content: center;
   color: black;
+  margin: 250px;
+  padding: 250px;
 }
 
 button {
   padding: 8px;
-  margin-left: 10px;
+  margin: 250px;
   margin-top: 40px;
   border-radius: 25px;
 }
 
-.search-results {
+/* .search-results {
   margin-top: 50px;
   width: 100%;
   display: table-column-group;
@@ -146,10 +146,7 @@ button {
   text-decoration: none;
   flex-wrap: wrap;
   justify-content: center;
-}
-#contianer:first-child{
-  margin-top:0px;
-}
+} */
   #container h5 {
   margin-top: 10px;
   width: 100%;
@@ -206,3 +203,14 @@ a {
   padding: 8px;
   margin: 12px;
 }
+
+.search-bar {
+      margin-left: 850px;
+      margin-bottom: 100px;
+
+/* #button-search {
+  margin-left: 1250px;
+margin-right: 1250px;
+padding-left: 2500px;
+} */
+
