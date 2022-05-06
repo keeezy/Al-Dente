@@ -257,6 +257,23 @@ img {
   border-radius: 25px;
 }
 
+.old-recipes {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding-top: 8px;
+ margin: 5px;
+}
+
+.old-recipes button {
+  background-color:rgba(255, 175, 0, 1); 
+  color: black;
+  border-radius: 25px;
+  margin: 8px;
+  padding: 20px;
+
+}
+
  /* #button-search {
   margin-left: 1250px;
 margin-right: 1250px;

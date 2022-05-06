@@ -1,3 +1,4 @@
+var notPresentRecipe = document.querySelector(".old-recipes")
 //functions to get data from the api
 var recipes = {
   fetchRecipes: function (recipe) {
@@ -15,6 +16,9 @@ var recipes = {
       })
       .then((data) => {
         this.displayResults(data.hits);
+        this.saveToStorage(recipe)
+        this.storedRecipes()
+
       });
   },
 
@@ -29,9 +33,11 @@ var recipes = {
     let displayResults = document.querySelector("#container");
     displayResults.innerHTML = "";
 
-
     for (i = 0; i < 6; i++) {
       let cusine = data[i].recipe.cuisineType[0];
+            cusine.replace(/\w\S*/g, (w) =>
+              w.replace(/^\w/, (c) => c.toUpperCase())
+            );
       let link = data[i].recipe.url;
       const { label } = data[i].recipe;
       const { ingredientLines } = data[i].recipe;
@@ -42,36 +48,53 @@ var recipes = {
       let nameEl = document.createElement("h5");
       nameEl.textContent = "Recipe: " + label;
       let cuisineTypeEl = document.createElement("h5");
-      cuisineTypeEl.textContent = "Cusine : " + cusine;
+      cuisineTypeEl.textContent = "Cuisine : " + cusine;
       let ingredientsEl = document.createElement("section");
       ingredientsEl.innerHTML = listItemEl;
       let getUrlEl = document.createElement("a");
-      getUrlEl.setAttribute("class", "col-4")
+      getUrlEl.setAttribute("class", "col-4");
       getUrlEl.href = link;
-     
-      containerRecipeEl.append(
-        fotoEl,
-        nameEl,
-        cuisineTypeEl,
-        ingredientsEl
-      );
 
-      getUrlEl.append(containerRecipeEl)
+      containerRecipeEl.append(fotoEl, nameEl, cuisineTypeEl, ingredientsEl);
+
+      getUrlEl.append(containerRecipeEl);
       displayResults.append(getUrlEl);
     }
   },
-
-//Function to loop on ingredient array
-  ingredientsRecipe: function(recipes) {
-    let recetas = "<h4>List of Ingredients</h4>"
+  
+  //Function to loop on ingredient array
+  ingredientsRecipe: function (recipes) {
+    let recetas = "<h4>List of Ingredients</h4>";
     for (let i = 0; i < recipes.length; i++) {
-      recetas += `<p>${recipes[i]}</p>`
-
+      recetas += `<p>${recipes[i]}</p>`;
     }
-    return recetas
-  }
+    return recetas;
+  },
+
+  saveToStorage: function (oldRecipe) {
+    let storedRecipes = JSON.parse(localStorage.getItem("old-recipes")) || [];
+    if (storedRecipes.includes(oldRecipe)) return;
+    storedRecipes.push(oldRecipe);
+    localStorage.setItem("old-recipes", JSON.stringify(storedRecipes));
+
+  },
+
+ 
+  storedRecipes: function () {
+    notPresentRecipe.innerHTML ="";
+    let oldRecipes = JSON.parse(localStorage.getItem("old-recipes") || [] );
+    for (let i = 0; i < oldRecipes.length; i++) {
+      const pastRecipe = document.createElement("button");
+      pastRecipe.textContent = oldRecipes[i];
+      pastRecipe.addEventListener("click", function() {
+        recipes.fetchRecipes(oldRecipes[i])
+      });
+      notPresentRecipe.append(pastRecipe)
+    }
+  },
 };
 
+recipes.storedRecipes();
 
 //EVENTSSSSSS
 //Event listener for search button
@@ -87,4 +110,3 @@ document
       recipes.search();
     }
   });
-
