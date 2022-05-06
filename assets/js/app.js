@@ -30,7 +30,7 @@ var recipes = {
     displayResults.innerHTML = "";
 
 
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < 6; i++) {
       let cusine = data[i].recipe.cuisineType[0];
       let link = data[i].recipe.url;
       const { label } = data[i].recipe;
