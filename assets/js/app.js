@@ -5,7 +5,7 @@ var recipes = {
     fetch(
       "https://api.edamam.com/api/recipes/v2?type=public&q=" +
         recipe +
-        "&app_id=69cf7082&app_key=844db0530aecb5987dfe95007e77dfa9&imageSize=REGULAR&random=true"
+        "&app_id=69cf7082&app_key=844db0530aecb5987dfe95007e77dfa9&imageSize=THUMBNAIL&random=true"
     )
       .then((response) => {
         if (!response.ok) {
@@ -75,9 +75,9 @@ var recipes = {
 
 //EVENTSSSSSS
 //Event listener for search button
-document.querySelector("#button-search").addEventListener("click", function () {
-  recipes.search();
-});
+// document.querySelector("#button-search").addEventListener("click", function () {
+//   recipes.search();
+// });
 
 //Kisten to enter or other key events
 document
