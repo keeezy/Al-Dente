@@ -85,7 +85,7 @@ var recipes = {
  //Function to get old recipes and display them to user.
   storedRecipes: function () {
     notPresentRecipe.innerHTML ="";
-    let oldRecipes = JSON.parse(localStorage.getItem("old-recipes") || [] );
+    let oldRecipes = JSON.parse(localStorage.getItem("old-recipes")) || [] ;
     for (let i = 0; i < oldRecipes.length; i++) {
       const pastRecipe = document.createElement("button");
       pastRecipe.textContent = oldRecipes[i];
