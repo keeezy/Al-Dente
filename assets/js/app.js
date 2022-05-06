@@ -1,4 +1,6 @@
+//Variable for button with last searches to be d
 var notPresentRecipe = document.querySelector(".old-recipes")
+
 //functions to get data from the api
 var recipes = {
   fetchRecipes: function (recipe) {
@@ -33,7 +35,7 @@ var recipes = {
     let displayResults = document.querySelector("#container");
     displayResults.innerHTML = "";
 
-    for (i = 0; i < 6; i++) {
+    for (i = 0; i < 9; i++) {
       let cusine = data[i].recipe.cuisineType[0];
             cusine.replace(/\w\S*/g, (w) =>
               w.replace(/^\w/, (c) => c.toUpperCase())
@@ -70,8 +72,9 @@ var recipes = {
     }
     return recetas;
   },
-
+//function to save the searches and avoid duplicates
   saveToStorage: function (oldRecipe) {
+    console.log(oldRecipe)
     let storedRecipes = JSON.parse(localStorage.getItem("old-recipes")) || [];
     if (storedRecipes.includes(oldRecipe)) return;
     storedRecipes.push(oldRecipe);
@@ -79,7 +82,7 @@ var recipes = {
 
   },
 
- 
+ //Function to get old recipes and display them to user.
   storedRecipes: function () {
     notPresentRecipe.innerHTML ="";
     let oldRecipes = JSON.parse(localStorage.getItem("old-recipes") || [] );
@@ -94,9 +97,11 @@ var recipes = {
   },
 };
 
-recipes.storedRecipes();
+//If I call the functions here, it throws an error. Check into that later. 
+// recipes.storedRecipes();
 
 //EVENTSSSSSS
+//This event listener does not work. Do not add it.
 //Event listener for search button
 // document.querySelector("#button-search").addEventListener("click", function () {
 //   recipes.search();
@@ -110,3 +115,11 @@ document
       recipes.search();
     }
   });
+
+  recipes.storedRecipes();
+
+//Trying to create a way to delete elements from array from old searches
+  // document
+  // .querySelector(".fa-times")
+  // .addEventListener("click", function() {
+  // });
