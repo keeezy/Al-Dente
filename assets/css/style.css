@@ -211,3 +211,11 @@ a {
   height: 400px;
   width: auto;
 }
+
+.container-fluid h2 {
+  font-family: "Katibeh";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+}
