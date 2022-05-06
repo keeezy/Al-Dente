@@ -88,7 +88,6 @@ nav ul li a {
 main {
   justify-content: flex-end;
   margin-top: 450px;
-
 }
 
 h2 {
@@ -147,7 +146,7 @@ button {
   flex-wrap: wrap;
   justify-content: center;
 } */
-  #container h5 {
+#container h5 {
   margin-top: 10px;
   width: 100%;
   display: flex;
@@ -162,18 +161,17 @@ button {
 }
 
 #container section {
-  color:black ;
-   background: rgba(255, 165, 0, 0.73);
-   padding: 8px;
+  color: black;
+  background: rgba(255, 165, 0, 0.73);
+  padding: 8px;
 }
 
 #container img {
   justify-content: center;
   align-items: center;
-  margin-left: 200px;
-
+  margin: auto;
+  display: flex;
 }
-
 
 a {
   opacity: 1;
@@ -205,12 +203,23 @@ a {
 }
 
 .search-bar {
-      margin-left: 850px;
-      margin-bottom: 100px;
+  margin: auto;
+  margin-bottom: 100px;
+  display: flex;
+}
 
+.col-4 {
+  margin-top: 15vh;
+  margin-bottom: auto;
+}
+.col-4 
+h5,
+section,
+img {
+  border-radius: 25px;
+}
 /* #button-search {
   margin-left: 1250px;
 margin-right: 1250px;
 padding-left: 2500px;
 } */
-
