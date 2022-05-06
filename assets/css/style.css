@@ -208,7 +208,7 @@ a {
 }
 
 .container-fluid img {
-  height: 400px;
+  height: auto;
   width: auto;
 }
 
@@ -219,3 +219,10 @@ a {
   line-height: 1;
   text-align: center;
 }
+
+#pic-info {
+  border-radius: 5px;
+  background-color: whitesmoke;
+  padding: 15px;
+}
+
