@@ -1,8 +1,8 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
 }
 
 *::-webkit-scrollbar {
@@ -70,11 +70,11 @@ nav ul {
   display: flex;
 }
 
-nav ul li+li {
+nav ul li + li {
   margin-left: 24px;
 }
 
-nav ul li+li::before {
+nav ul li + li::before {
   content: "/";
   font-family: "Katibeh";
   font-weight: 400;
@@ -246,35 +246,40 @@ a {
 .col-4 {
   margin-top: 7vh;
   margin-bottom: auto;
-
 }
-.col-4 
-h5,
+.col-4 h5,
 section,
 img {
   border-radius: 25px;
 }
 
 .old-recipes {
- display: flex;
- align-items: center;
- justify-content: center;
- padding-top: 8px;
- margin: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8px;
+  margin: 9px;
 }
 
 .old-recipes button {
-  background-color:rgba(255, 175, 0, 1); 
+  background-color: rgba(255, 175, 0, 1);
   color: black;
   border-radius: 25px;
   margin: 8px;
   padding: 20px;
-
 }
 
- /* #button-search {
+/* #button-search {
   margin-left: 1250px;
 margin-right: 1250px;
 padding-left: 2500px;
 } 
  */
+.btn {
+  display: flex;
+}
+.form-label {
+  font-weight: bolder;
+  font-size: large;
+}
+
