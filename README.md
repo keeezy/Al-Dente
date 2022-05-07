@@ -9,8 +9,8 @@ Input type of food ingredient in the search box and press enter. Maximum of 9 re
 <img src="https://user-images.githubusercontent.com/99520179/167244318-9c555c67-6416-43b3-af17-702eda61d804.png" alt="Food Recipe demo" style="max-width:100%;">
 
 ## Links
-Deployed: https://keeezy.github.io/Project-One/
-Repository: https://github.com/keeezy/Project-One
+- Deployed: https://keeezy.github.io/Project-One/
+- Repository: https://github.com/keeezy/Project-One
 
 ## Technologies Used
 - Edamame API
