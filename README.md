@@ -1,11 +1,8 @@
-# Food recipe app
+# Al Dente Food Recipe App
+
+## Description
 
 
+## Usage
 
-## Using API search a word, to pull recipes from data base
-By entering a keyword, user is able to pull food recipes from web API. 
-- Morad, Kevin = CSS and HTML
-- Philip, Liberato = JS
-- Fernando = Debugging
-
-
+<img src="https://user-images.githubusercontent.com/99520179/167244318-9c555c67-6416-43b3-af17-702eda61d804.png" alt="Food Recipe demo" style="max-width:100%;">
