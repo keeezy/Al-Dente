@@ -183,7 +183,7 @@ button {
   align-items: center;
   margin: auto;
   display: flex;
-  width: 425px;
+  width: 250px;
 }
 
 a {
@@ -247,8 +247,9 @@ a {
 }
 
 .col-4 {
-  margin-top: 15vh;
+  margin-top: 7vh;
   margin-bottom: auto;
+
 }
 .col-4 
 h5,
@@ -262,7 +263,7 @@ img {
  align-items: center;
  justify-content: center;
  padding-top: 8px;
- margin: 5px;
+ margin: 9px;
 }
 
 .old-recipes button {
