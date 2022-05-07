@@ -94,7 +94,6 @@ nav ul li a {
 }
 
 main {
-
   justify-content: flex-end;
   margin-top: 450px;
 }
@@ -215,7 +214,6 @@ a {
   margin: 12px;
 }
 
-
 .container-fluid img {
   height: auto;
   width: auto;
@@ -238,7 +236,6 @@ a {
 .wrapper {
   margin-top: 200px;
 }
-
 .search-bar {
   margin: auto;
   margin-bottom: 100px;
